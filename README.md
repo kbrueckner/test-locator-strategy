@@ -15,19 +15,19 @@ Whenever possible elements should get a unique identifier - use the attribute id
 Groupable elements such as items in a list should be identified over group ocators held in the class name attribute. While in most of the cases the the container for a group such as a list parent can be identified by a unique identifier, all the children (list items) can be grouped together by the same class definition. Ideally this class definition also has an indicator of the parent element.
 
 Example:
-``
+```html
 <ul id="my-list">
   <li id="my-list__item-{id of item 1}" class="my-list__item">Item 1</li>
   <li id="my-list__item-{id of item 2}" class="my-list__item">Item 2</li>
 </ul>
-``
+```
 
 If your locators would be in conflict with your style definitions - which should not be likely to be the case - a good choise to go with are data attributes. Data attributes can be defined free and are valid HTML. An example for a locator attribute name could be data-test-locator. The same rules as above apply here as well. Elements which are unique by nature shall have a unique identifier. Where it is possible to group elements contextually, use the same locator for them.
  
 Example:
-``
+```html
 <ul data-test-locator="my-list">
   <li data-test-locator="my-list__item">Item 1</li>
   <li data-test-locator="my-list__item">Item 2</li>
 </ul>
-``
+```
