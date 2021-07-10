@@ -47,6 +47,8 @@ It is highly not recommended to use text as locators in your test codes. Imagine
 Inspired by the [BEM methodology](http://getbem.com/) locators can be built with block scopes and appended element definitions.
 A simple save button identifier could look like save--button. If the save button is inside the scope of a manage area it would look like manage-area__save--button. If the whole block would be scoped under a product it would result in product__manage-area__save--button.
 
+The appended element type is technically not required to uniquely identify an element but make your test codes easier to read. With the appendix it is easy to figure which type of element is to be dealt with.
+
 **Conclusion:**
 * separate blocks/scopes by __ (double underscore)
 * append element type via -- (double dash)
