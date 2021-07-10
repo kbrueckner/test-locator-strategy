@@ -15,7 +15,7 @@ Whenever possible elements should get a unique identifier - use the attribute id
 
 Groupable elements such as items in a list should be identified over group ocators held in the class name attribute. While in most of the cases the the container for a group such as a list parent can be identified by a unique identifier, all the children (list items) can be grouped together by the same class definition. Ideally this class definition also has an indicator of the parent element.
 
-Example:
+_Example:_
 ```html
 <ul id="my-list">
   <li id="my-list__item-{id of item 1}" class="my-list__item">Item 1</li>
@@ -25,7 +25,7 @@ Example:
 
 If your locators would be in conflict with your style definitions - which should not be likely to be the case - a good choise to go with are data attributes. Data attributes can be defined free and are valid HTML. An example for a locator attribute name could be data-test-locator. The same rules as above apply here as well. Elements which are unique by nature shall have a unique identifier. Where it is possible to group elements contextually, use the same locator for them.
  
-Example:
+_Example:_
 ```html
 <ul data-test-locator="my-list">
   <li data-test-locator="my-list__item">Item 1</li>
@@ -35,6 +35,7 @@ Example:
 
 You will find other opinions out there where the authors prefer the data attributes over id and class attributes. We are the opinion that if you have to write templates and tests in a devops manner, there is in most cases no need to introduce data attributes. In case you have to update locators in for example an id field it is also your responsibility to update the locators in the test codes. Adding additional data attributes is just like code duplication.
 
+**Conclusion:**
 * Use id attribute wherever possible
 * Use class definitions four siblings in a group
 * Use data attributes as a fallback
@@ -46,6 +47,7 @@ It is highly not recommended to use text as locators in your test codes. Imagine
 Inspired by the [BEM methodology](http://getbem.com/) locators can be built with block scopes and appended element definitions.
 A simple save button identifier could look like save--button. If the save button is inside the scope of a manage area it would look like manage-area__save--button. If the whole block would be scoped under a product it would result in product__manage-area__save--button.
 
+**Conclusion:**
 * separate blocks/scopes by __ (double underscore)
 * append element type via -- (double dash)
 
