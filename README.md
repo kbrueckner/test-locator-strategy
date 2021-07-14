@@ -1,12 +1,14 @@
 # Test Locator Strategy
 
-When writing automatted UI regression tests with i.e. Playwright, Cypress or Selenium one of the first challenges to be addressed is: what locator strategy and format to use.
+When writing automatted UI tests with i.e. Playwright, Cypress or Selenium one of the first challenges to be addressed is: what locator strategy and format to use.
 
 This project aims to help you to tackle this challenge and define a locator strategy which can be used universally in most of the user interfaces you want to automatically test.
 Since in a modern agile way of software development, developers who create user interfaces are also responsible to write corresponding tests for their code, this strategy comes from the end of integrating speaking locaors which can then easiely be reused in the test codes. Other projects or post only address the challange from the side of a tester who needs to find locators in order to write test while other developers created the templates which are to be tested.
 
 ## General considerations
-Elements which you want to refer to in automatted tests always need to be identifiable by a static and there not changing identifier. Trying to identify random locators is nearly not possible. We do not believe in self healing tests. When writing regression tests you must be able to make proper assumptions. If you cannot rely on elements to be identified by proper non-dynamic identifiers it can only be a good guess that you will find the right elements in self healing test, it cannot be a guarantee.
+Elements which you want to refer to in automatted tests always need to be identifiable by a static and there not changing identifier. Trying to identify random locators is nearly not possible. We do not believe in self healing tests. When writing tests you must be able to make proper assumptions. If you cannot rely on elements to be identified by proper non-dynamic identifiers it can only be a good guess that you will find the right elements in self healing test, it cannot be a guarantee.
+
+XPath as locators fall into the same category as changing locator. If elements are moved into a different position in the DOM, likely the defined XPath locator breaks. Therefore it is not recommended to use XPath locators in test cases. As mentioned above go with fix selector definitions. How that can look like is described below.
 
 ## Which attributes to use for a test locator
 The best strategy to pick an HTML-attribute to use as a locator is to use id or class names. These attributes are common element attributes which are valid on every known HTML element. In addition most of the modern test tools and libraries ome with CSS-selectors which include means to easiely find ids or classes.
