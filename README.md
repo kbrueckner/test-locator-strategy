@@ -62,3 +62,23 @@ The appended element type is technically not required to uniquely identify an el
 * separate blocks/scopes by __ (double underscore)
 * append element type via -- (double dash)
 
+## Element type suggestions
+
+This sections will give you suggestions for element types which you can use in our locators. The below list has generic type suggestions which should fit for most of the use cases you can think of. Do not try to squeeze in your element into one of the types if it does not make sense. Instead just leave out the element type in your locator.
+
+Type|Description
+----|----
+button|All elements in the wider sense of a button or clickable area.
+select|Parent for a choice of different options. Applies to elements like select boxes, dropdowns, radio buttons and calendar widgets.
+option|A single option element inside a select.
+input|Single input elements such as input fields, textareas, checkboxes and sliders.
+title|Title or heading elements
+text|Simple text elements
+page|Wrapper for a page representation in web apps
+area|Container elements such as sidebar, content area or header
+flyin|Area which is flying in to the main screen.
+overlay|Overlays or dialog elements
+dragable|Dragable items
+droparea|Drop zones for dragable items
+list|Parent for lists in a wider sense such as regular lists and groupings of child elements
+listitem|Child element of a list
